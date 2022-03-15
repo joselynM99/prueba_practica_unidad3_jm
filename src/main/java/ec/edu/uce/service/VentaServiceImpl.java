@@ -1,5 +1,7 @@
 package ec.edu.uce.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,11 @@ public class VentaServiceImpl implements IVentaService{
 	public void borrarPorId(Integer id) {
 		this.ventaRepo.borrarPorId(id);
 		
+	}
+	
+	@Override
+	public List<Venta> buscarTodo(){
+		return this.ventaRepo.buscarTodo();
 	}
 	
 	

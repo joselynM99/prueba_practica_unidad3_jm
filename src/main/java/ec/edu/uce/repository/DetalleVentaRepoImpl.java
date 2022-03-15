@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.DetalleVenta;
+import ec.edu.uce.modelo.Producto;
 
 @Repository
 @Transactional
@@ -42,5 +44,7 @@ public class DetalleVentaRepoImpl implements IDetalleVentaRepo {
 		this.entityManager.remove(detalleABorrar);
 
 	}
+	
+
 
 }

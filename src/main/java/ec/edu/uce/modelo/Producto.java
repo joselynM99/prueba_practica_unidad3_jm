@@ -14,31 +14,31 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "producto_supermercado")
 public class Producto {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "producto")
-	@SequenceGenerator(name = "seq_producto", sequenceName = "producto", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_producto_supermercado")
+	@SequenceGenerator(name = "seq_producto_supermercado", sequenceName = "seq_producto_supermercado", allocationSize = 1)
 	@Column(name = "prod_id")
 	private Integer id;
-	
+
 	@Column(name = "prod_codigo_barras")
 	private String codigoBarras;
-	
+
 	@Column(name = "prod_nombre")
 	private String nombre;
-	
+
 	@Column(name = "prod_categoria")
 	private String categoria;
-	
+
 	@Column(name = "prod_stock")
 	private Integer stock;
-	
+
 	@Column(name = "prod_precio")
 	private BigDecimal precio;
-	
-	@OneToMany(mappedBy = "producto", cascade = CascadeType.ALL) 
+
+	@OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
 	private List<DetalleVenta> detalles;
 
 	public Integer getId() {
@@ -102,6 +102,5 @@ public class Producto {
 		return "Producto [id=" + id + ", codigoBarras=" + codigoBarras + ", nombre=" + nombre + ", categoria="
 				+ categoria + ", stock=" + stock + ", precio=" + precio + ", detalles=" + detalles + "]";
 	}
-	
 
 }

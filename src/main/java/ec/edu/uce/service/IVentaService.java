@@ -1,5 +1,7 @@
 package ec.edu.uce.service;
 
+import java.util.List;
+
 import ec.edu.uce.modelo.Venta;
 
 public interface IVentaService {
@@ -11,5 +13,7 @@ public interface IVentaService {
 	Venta buscarPorID(Integer id);
 
 	void borrarPorId(Integer id);
+
+	List<Venta> buscarTodo();
 
 }

@@ -12,4 +12,6 @@ public interface IProductoRepo {
 
 	void borrarPorId(Integer id);
 
+	Producto buscarPorCodigoBarras(String codigo);
+
 }

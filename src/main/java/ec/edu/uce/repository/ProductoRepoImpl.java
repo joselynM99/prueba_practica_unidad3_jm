@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
@@ -41,6 +42,15 @@ public class ProductoRepoImpl implements IProductoRepo {
 		Producto productoABorrar = this.buscarPorID(id);
 		this.entityManager.remove(productoABorrar);
 
+	}
+	
+	@Override
+	public Producto buscarPorCodigoBarras(String codigo) {
+		TypedQuery<Producto> myTypedQuery = this.entityManager
+				.createQuery("select p from Producto p where p.codigoBarras =:valor", Producto.class);
+		myTypedQuery.setParameter("valor", codigo);
+		
+		return myTypedQuery.getSingleResult();
 	}
 
 }

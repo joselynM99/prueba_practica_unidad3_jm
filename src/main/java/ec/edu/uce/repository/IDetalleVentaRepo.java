@@ -12,4 +12,5 @@ public interface IDetalleVentaRepo {
 
 	void borrarPorId(Integer id);
 
+
 }
